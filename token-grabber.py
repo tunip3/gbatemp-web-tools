@@ -21,5 +21,9 @@ if "xf_user" in g.cookies:
     print("xf_user token is "+g.cookies['xf_user'])
     #get xf_session token
     print("new xf_session token is "+g.cookies['xf_session'])
+    #update cookies in the dict
+    cookies["xf_session"] = g.cookies['xf_session']
+    #add xf user to the cookies dict
+    cookies.update({"xf_user":g.cookies['xf_user']})
 else:
     print("invalid login")
